@@ -12,7 +12,7 @@ final rocketsProvider = FutureProvider<List<Rocket>>((ref) async {
     final List data = json.decode(res.body);
     return data.map((e) => Rocket.fromJson(e)).toList();
   }
-  throw Exception('Ошибка загрузки ракет');
+  throw Exception('Error loading rockets');
 });
 
 final launchesProvider = FutureProvider.family<List<Launch>, String>((
@@ -26,5 +26,5 @@ final launchesProvider = FutureProvider.family<List<Launch>, String>((
     final List data = json.decode(res.body);
     return data.map((e) => Launch.fromJson(e)).toList();
   }
-  throw Exception('Ошибка загрузки запусков');
+  throw Exception('Error loading launches');
 });
